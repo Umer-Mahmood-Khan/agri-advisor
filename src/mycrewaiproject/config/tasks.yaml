@@ -1,0 +1,38 @@
+fetch_weather_task:
+  description: >
+    Fetch the current weather data for coordinates 33.738045° N, 73.084488° E.
+    Use your API tool to retrieve temperature, humidity, rainfall, and windspeed.
+    Your final answer MUST be a clear, structured text report listing these metrics.
+  expected_output: >
+    Weather Summary:
+    - Temperature: __ °C
+    - Humidity: __ %
+    - Windspeed: __ m/s
+    - Rainfall (last 1h): __ mm
+
+weather_research_task:
+  description: >
+    Based on the latest weather data provided, analyze how current conditions may impact {crop_type} crops in Pakistan.
+    Generate insights tailored to {crop_type} farming, including:
+    - Risks (e.g. too much rain, risk of pests, fungal diseases).
+    - Opportunities (e.g. optimal temperatures for growth).
+    - Farming actions (e.g. irrigation, spraying, pest control).
+
+    Your final answer MUST contain:
+    - At least 3 observations relevant to {crop_type} crop health.
+    - At least 2 recommendations for farmers to protect or improve their {crop_type} yield.
+  expected_output: >
+    A structured advisory report containing:
+    - Weather Observations
+    - Agricultural Recommendations
+
+write_weather_report_task:
+  description: >
+    Compose a professional, easy-to-read weather report for {crop_type} farmers using the researcher's insights.
+    Structure your report as Markdown with:
+    - Title
+    - Current weather summary
+    - Observations
+    - Farming Recommendations
+  expected_output: >
+    A complete Markdown-formatted weather report suitable for {crop_type} farmers.
