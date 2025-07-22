@@ -43,28 +43,30 @@ This project enables farmers, students, and ag‑tech developers to:
 
 ## 🏗 Architecture
 
-![Architecture Flowchart](images/agri_advisor_fixed.drawio.png)  
+![Architecture Flowchart](images/agri_advisor_fixed.drawio.png.png)  
 *End‑to‑end flow: weather & soil → preprocessing → model → LLM advice → UI* 
 
 ---
 
 ## 🏗 Screenshots & Visuals
 
-![Architecture Flowchart](images/screencapture.png)  
+![Architecture Flowchart](images/dashboard.png)  
 *Figure: Streamlit Dashboard*}  
 
 ---
 
 ## 🛠 Tech Stack
 
-| Layer               | Tools & Libraries                      |
-|---------------------|----------------------------------------|
-| **Data Ingestion**  | Tweepy, fetch_recent_tweets()          |
-| **Preprocessing**   | Python, pandas, custom `clean_text`    |
-| **Vectorization**   | scikit-learn `TfidfVectorizer`         |
-| **Modeling**        | scikit-learn `LogisticRegression`      |
-| **Agent Orchestration** | LangChain, meta-llama-3-8B         |
-| **Dashboard**       | Streamlit                              |
+| Layer                    | Tools & Libraries                             |
+|--------------------------|-----------------------------------------------|
+| **Data Ingestion**       | `requests`, OpenWeatherMap API                |
+| **Preprocessing**        | Python, `pandas`, `numpy`                     |
+| **Feature Engineering**  | `pandas`                                     |
+| **Modeling**             | `scikit-learn` (RandomForestClassifier), `joblib` |
+| **LLM & Prompting**      | OpenAI GPT-4, `python-dotenv`                 |
+| **Orchestration**        | CrewAI (v0.x with `@crew.task`)               |
+| **UI**                   | Streamlit                                     |
+| **Deployment**           | Docker, AWS ECS (or GCP Cloud Run), GitHub Actions CI/CD |
 
 ---
 
@@ -72,11 +74,8 @@ This project enables farmers, students, and ag‑tech developers to:
 
 1. **Clone the repo**  
    ```bash
-   git clone https://github.com/<your-username>/social-media-sentiment.git
-   cd social-media-sentiment
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
+   git clone https://github.com/<your-username>/agri-advisor.git
+   cd agri-advisor
 
 
 
